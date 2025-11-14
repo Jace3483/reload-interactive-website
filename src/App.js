@@ -1,15 +1,16 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Navbar, Nav, Container } from "react-bootstrap";
-import Home from "./Home";
-import Landing from "./Landing";
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Signup from './Signup';
+import MyAccount from './MyAccount';
 
 function App() {
   return (
     <Router>
-      {/* Routes */}
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/myaccount" element={<MyAccount />} />
+        <Route path="*" element={<p>Page not found</p>} />
       </Routes>
     </Router>
   );
