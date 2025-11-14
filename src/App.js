@@ -1,40 +1,30 @@
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './Home';
+import Landing from './Landing';
+
 function App() {
   return (
-    <div>
-      {/* Simple Navbar */}
-      <nav style={{
-        background: "#111",
-        color: "#fff",
-        padding: "15px",
-        fontSize: "20px"
-      }}>
-        Reload Interactive
-      </nav>
-
-      {/* Main Content */}
-      <div style={{ padding: "40px", textAlign: "center" }}>
-        <h1>Welcome to Reload Interactive Studios</h1>
-        <p>Your home for amazing games and experiences.</p>
-
-        <button style={{
-          padding: "10px 20px",
-          fontSize: "18px",
-          cursor: "pointer"
+    <Router>
+      <div>
+        {/* Navbar */}
+        <nav style={{
+          background: "#111",
+          color: "#fff",
+          padding: "15px",
+          fontSize: "20px"
         }}>
-          Learn More
-        </button>
+          Reload Interactive |{" "}
+          <Link to="/" style={{ color: "#fff", marginRight: "15px" }}>Landing</Link>
+          <Link to="/home" style={{ color: "#fff" }}>Home</Link>
+        </nav>
+
+        {/* Routes */}
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
       </div>
-
-
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-
-
-
-
-    </div>
+    </Router>
   );
 }
 
