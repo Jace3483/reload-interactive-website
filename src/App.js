@@ -1,3 +1,6 @@
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './Home';
+
 function App() {
   return (
     <div>
@@ -9,6 +12,7 @@ function App() {
         fontSize: "20px"
       }}>
         Reload Interactive
+        <Link to="/">Home</Link> | <Link to="/about">About</Link>
       </nav>
 
       {/* Main Content */}
@@ -24,6 +28,16 @@ function App() {
           Learn More
         </button>
       </div>
+
+
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+
+
+
+
     </div>
   );
 }
