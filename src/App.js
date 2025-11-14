@@ -13,7 +13,7 @@ function App() {
 
       {/* Main Content */}
       <div style={{ padding: "40px", textAlign: "center" }}>
-        <h1>Welcome to Reload Interactive</h1>
+        <h1>Welcome to Reload Interactive Studios</h1>
         <p>Your home for amazing games and experiences.</p>
 
         <button style={{
