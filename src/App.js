@@ -1,29 +1,30 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './Home';
-import Landing from './Landing';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import Home from "./Home";
+import Landing from "./Landing";
 
 function App() {
   return (
     <Router>
-      <div>
-        {/* Navbar */}
-        <nav style={{
-          background: "#111",
-          color: "#fff",
-          padding: "15px",
-          fontSize: "20px"
-        }}>
-          Reload Interactive |{" "}
-          <Link to="/" style={{ color: "#fff", marginRight: "15px" }}>Landing</Link>
-          <Link to="/home" style={{ color: "#fff" }}>Home</Link>
-        </nav>
+      {/* Navbar */}
+      <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+        <Container>
+          <Navbar.Brand as={Link} to="/">Reload Interactive</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link as={Link} to="/">Landing</Nav.Link>
+              <Nav.Link as={Link} to="/home">Home</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
 
-        {/* Routes */}
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/home/*" element={<Home />} />
-        </Routes>
-      </div>
+      {/* Routes */}
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/home/*" element={<Home />} />
+      </Routes>
     </Router>
   );
 }
