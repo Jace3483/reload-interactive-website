@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* Simple Navbar */}
+      <nav style={{
+        background: "#111",
+        color: "#fff",
+        padding: "15px",
+        fontSize: "20px"
+      }}>
+        Reload Interactive
+      </nav>
+
+      {/* Main Content */}
+      <div style={{ padding: "40px", textAlign: "center" }}>
+        <h1>Welcome to Reload Interactive</h1>
+        <p>Your home for amazing games and experiences.</p>
+
+        <button style={{
+          padding: "10px 20px",
+          fontSize: "18px",
+          cursor: "pointer"
+        }}>
+          Learn More
+        </button>
+      </div>
     </div>
   );
 }
