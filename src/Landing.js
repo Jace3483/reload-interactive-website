@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 function Landing() {
     useEffect(() => {
             document.title = "Reload Interactive Studios";
