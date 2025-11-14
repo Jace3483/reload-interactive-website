@@ -1,5 +1,13 @@
+import { useEffect } from "react";
+
 function Home() {
-  return (
+    useEffect(() => {
+        document.title = "Home";
+    }, []);
+  
+  
+  
+    return (
     <div style={{ padding: "40px", textAlign: "center" }}>
       <h1>Welcome to Reload Interactive Studios</h1>
       <p>Your home for amazing games and experiencesd.</p>
