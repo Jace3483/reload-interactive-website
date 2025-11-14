@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Landing() {
   useEffect(() => {
-    document.title = "Reload Interactive Studios";
+    document.title = "Reload Interactive";
   }, []);
 
   return (
