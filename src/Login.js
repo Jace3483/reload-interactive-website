@@ -1,6 +1,6 @@
 // src/Login.js
 import React, { useState } from 'react';
-import { Auth } from 'aws-amplify';
+import { Auth } from 'aws-amplify/auth';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -12,10 +12,13 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await Auth.signIn(email, password);
+      await Auth.signIn({
+        username: email,
+        password: password
+      });
       navigate('/'); // redirect to homepage
     } catch (err) {
-      setError(err.message);
+      setError(err.message || 'Login failed');
     }
   };
 
