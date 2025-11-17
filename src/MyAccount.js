@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Amplify, Auth } from 'aws-amplify';
+import { Amplify } from 'aws-amplify';
+import { Auth } from 'aws-amplify/auth';   // ← FIXED
 import awsconfig from './aws-exports';
 import { Container, Card, Form, Button, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
