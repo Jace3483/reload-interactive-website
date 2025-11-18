@@ -1,17 +1,18 @@
-version: 1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - rm -rf node_modules package-lock.json
-        - npm install
-    build:
-      commands:
-        - npm run build
-  artifacts:
-    baseDirectory: build
-    files:
-      - "**/*"
-  cache:
-    paths:
-      - node_modules/**/*
+phases:
+preBuild:
+commands:
+        # Optional: remove old cache to prevent npm errors
+- rm -rf node_modules package-lock.json
+        # Fresh install
+- npm install
+build:
+commands:
+- npm run build
+artifacts:
+    # Deploy everything inside the build folder
+baseDirectory: build
+files:
+      - '**/*'
+cache:
+paths:
+- node_modules/**/*
